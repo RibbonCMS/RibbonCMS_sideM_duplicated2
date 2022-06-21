@@ -1,0 +1,10 @@
+```yaml
+posted_at: 2022年04月20日 10時00分
+thumbnail_theme: default
+thumbnail_image_url: https://image2.b-ch.com/ttl2/2927/2927001a.jpg?impolicy=fitin&ww=640&hh=380
+aaaaaaaaaaaa: aaaaaaaaaaaaaaaaaa
+fdsfs:
+    - aaaaaaaaaa
+    - fjsdiofjosdif
+    - in_list_header_image_url: https://img.my-best.com/content_section/choice_component/sub_contents/620fdae1777b0af2fcfc21709d6b3e2a.jpg?ixlib=rails-4.2.0&q=70&lossless=0&w=690&fit=max&s=a0e0489475183594ef693284bd231c75
+```

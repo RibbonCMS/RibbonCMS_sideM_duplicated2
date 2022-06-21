@@ -1,0 +1,11 @@
+ [
+        {
+          "color": "d73a4a",
+          "default": false,
+          "description": "Something isn't working",
+          "id": 4009604073,
+          "name": "config",
+          "node_id": "LA_kwDOHIqKoc7u_bPq",
+          "url": "https://api.github.com/repos/ShotaroKataoka/githubio-blog-dev/labels/article"
+        }
+  ]

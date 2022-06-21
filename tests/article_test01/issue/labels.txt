@@ -1,0 +1,20 @@
+ [
+        {
+          "color": "d73a4a",
+          "default": false,
+          "description": "Something isn't working",
+          "id": 4009604074,
+          "name": "article",
+          "node_id": "LA_kwDOHIqKoc7u_bPq",
+          "url": "https://api.github.com/repos/ShotaroKataoka/githubio-blog-dev/labels/article"
+        },
+        {
+          "color": "333aa9",
+          "default": false,
+          "description": "programing",
+          "id": 4009604075,
+          "name": "tag/javascriptだよ",
+          "node_id": "LA_kwDOHIqKoc7u_bPq",
+          "url": "https://api.github.com/repos/ShotaroKataoka/githubio-blog-dev/labels/article"
+        }
+      ]

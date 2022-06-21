@@ -1,0 +1,14 @@
+```yaml
+blog_title: RibbonCMS
+copylight_name: RibbonCMS team
+copylight_url: https://github.com/RibbonCMS
+root_url: https://ribboncms.github.io/SimpleBlogTemplate/
+issues_page_url: https://github.com/RibbonCMS/RibbonCMS_sideM/issues
+favicon_image_url: https://user-images.githubusercontent.com/42331656/168180348-764a8f83-9f26-488f-a128-2b9651a1268b.png
+
+author_name: RibbonCMSの中の人
+author_description: RibbonCMSを開発しています
+avatar_image_url: https://shotarokataoka.github.io/static/images/avatar/avatar.webp
+header_image_url: https://shotarokataoka.github.io/static/images/article/3/defef15e87abeebc6cbcfe6a086ce77e.png.webp
+#sns: {name: string (e.g. GitHub), url: string}
+```

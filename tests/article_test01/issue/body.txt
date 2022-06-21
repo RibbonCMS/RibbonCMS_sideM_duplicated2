@@ -1,0 +1,14 @@
+```yaml
+posted_at: 2022年04月20日 10時00分
+thumbnail_theme: default
+thumbnail_image_url: https://image2.b-ch.com/ttl2/2927/2927001a.jpg?impolicy=fitin&ww=640&hh=380
+```
+![image](https://user-images.githubusercontent.com/42331656/166391228-bc057845-e87c-445a-a6ac-f47b340a3b3b.png)
+
+![image](https://user-images.githubusercontent.com/42331656/166391243-91fb373c-0be3-48ec-91f5-0e706b5ab5f0.png)
+
+![image](https://user-images.githubusercontent.com/42331656/166391253-9d3ca723-0b8e-4d3d-8f93-a33876271432.png)
+
+https://zenn.dev/tomi/articles/2021-03-22-blog-card
+
+あああ

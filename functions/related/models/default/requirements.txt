@@ -1,0 +1,3 @@
+sklearn
+mecab-python3
+unidic-lite
