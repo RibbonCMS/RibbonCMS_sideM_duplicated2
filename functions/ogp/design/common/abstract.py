@@ -13,7 +13,7 @@ class AbstractDesign(ABC):
     COMMON_TEMPLATES_DIR = f'{COMMON_DIR}/templates'
 
     @abstractmethod
-    def __init__(self, issue, article, config):
+    def __init__(self, issue, article, config, consts):
         pass
 
     @abstractmethod

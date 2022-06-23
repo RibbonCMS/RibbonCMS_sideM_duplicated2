@@ -21,14 +21,14 @@ import os
 
 from functions.utils import import_module_with_install
 
-def generate_ogp_image(issue, article, config, thumbnail_save_path):
+def generate_ogp_image(issue, article, config, consts, thumbnail_save_path):
     theme = issue.get_fm('thumbnail_theme')
     try:
         design = import_module_with_install('functions.ogp.design.'+theme)
     except:
         design = import_module_with_install('functions.ogp.design.default')
 
-    design = design.Design(issue, article, config)
+    design = design.Design(issue, article, config, consts)
     img = design.create()
 
     img = format_thumbnail(img)

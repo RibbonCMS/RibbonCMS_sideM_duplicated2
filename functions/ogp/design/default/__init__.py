@@ -10,7 +10,7 @@ from functions.ogp.design.common.abstract import AbstractDesign
 from functions.ogp.design.common import paste_icon_image, add_centered_text
 
 class Design(AbstractDesign):
-    def __init__(self, issue, article, config):
+    def __init__(self, issue, article, config, consts):
         """ font """
         self.font_black_path = f"{self.COMMON_FONTS_DIR}/NotoSansJP-Black.otf"
         self.font_medium_path = f"{self.COMMON_FONTS_DIR}/NotoSansJP-Medium.otf"
@@ -31,7 +31,7 @@ class Design(AbstractDesign):
 
         self.ogp_base_img_path = f'{self.COMMON_TEMPLATES_DIR}/default.png'
         try:
-            self.ogp_icon_img_path = config['avatar_image_url']['path']
+            self.ogp_icon_img_path = consts.PUBLIC_DIR+config['avatar_image_url']['path']
         except:
             self.ogp_icon_img_path = None
         self.title_text = article.title

@@ -87,7 +87,7 @@ def build_article(consts, issue):
     ------------------------
     """
     thumbnail_save_path = f'{consts.THUMBNAIL_IMAGES_DIR}/{article.slug}.{consts.THUMBNAIL_EXTENSION}'
-    generate_ogp_image(issue, article, config, thumbnail_save_path)
+    generate_ogp_image(issue, article, config, consts, thumbnail_save_path)
 
     """
     --------------------------
