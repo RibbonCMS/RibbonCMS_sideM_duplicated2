@@ -80,7 +80,7 @@ class Consts():
         if test_dir is not None:
             self._set_path(f'./tests/{test_dir}')
         else:
-            self._set_path('.')
+            self._set_path('..')
         assert os.path.exists(self.ISSUE_PATH), f"Directory not found; {self.ISSUE_PATH}"
 
     def _set_path(self, root_dir):
