@@ -4,10 +4,11 @@ Returns:
     PIL image object
 """
 
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 from functions.ogp.design.common.abstract import AbstractDesign
-from functions.ogp.design.common import paste_icon_image, add_centered_text
+from functions.ogp.design.common import paste_icon_image, add_centered_text, add_lefted_text, is_text_size_ok
+from functions.related.models.default import tokenizer
 
 class Design(AbstractDesign):
     def __init__(self, issue, article, config, consts):
@@ -16,17 +17,21 @@ class Design(AbstractDesign):
         self.font_medium_path = f"{self.COMMON_FONTS_DIR}/NotoSansJP-Medium.otf"
 
         """ icon settings """
-        self.icon_w = 150
-        self.icon_h = 150
-        self.icon_pos_h = 220
+        self.icon_w = 60
+        self.icon_h = 60
+        self.icon_pos_h = 510
+        self.icon_pos_w = 125
 
         """ title settings """
-        self.side_padding = 550
-        self.text_pos_h = 400
-        self.title_font_size = 72
+        self.side_padding = 250
+        self.text_pos_h = 200
+        self.title_font_size = 64
+        self.title_margin_h = 50
+        self.title_texts = tokenizer.wakachi(article.title)
 
         """ author settings """
-        self.author_pos_h = 620
+        self.author_pos_h = 508
+        self.author_pos_w = 200
         self.author_font_size = 42
 
         self.ogp_base_img_path = f'{self.COMMON_TEMPLATES_DIR}/default.png'
@@ -34,7 +39,7 @@ class Design(AbstractDesign):
             self.ogp_icon_img_path = consts.PUBLIC_DIR+config['avatar_image_url']['path']
         except:
             self.ogp_icon_img_path = None
-        self.title_text = article.title
+
         self.author_text = config['author_name']
 
     def create(self):
@@ -48,24 +53,48 @@ class Design(AbstractDesign):
                     self.icon_w, 
                     self.icon_h, 
                     self.icon_pos_h,
+                    icon_pos_w = self.icon_pos_w,
                 )
 
+        draw = ImageDraw.Draw(base_img)
+        font = ImageFont.truetype(self.font_black_path, self.title_font_size)
+        text = ''
+        multiline = False
+        for i, title_text in enumerate(self.title_texts):
+            if is_text_size_ok(draw, font, text+title_text, base_img.size[0], self.side_padding, text_padding=250):
+                text += title_text
+            else:
+                base_img = add_centered_text(
+                        base_img, 
+                        text,
+                        self.font_black_path, 
+                        self.title_font_size, 
+                        (64, 64, 64), 
+                        self.text_pos_h, 
+                        self.side_padding,
+                    )
+                text = ''.join(self.title_texts[i:])
+                self.text_pos_h += self.title_font_size
+                multiline = True
+                break
+        self.text_pos_h = self.text_pos_h + self.title_margin_h if multiline else self.text_pos_h + self.title_margin_h//2
         base_img = add_centered_text(
                 base_img, 
-                self.title_text, 
+                text,
                 self.font_black_path, 
                 self.title_font_size, 
                 (64, 64, 64), 
                 self.text_pos_h, 
                 self.side_padding,
             )
-        base_img = add_centered_text(
+
+        base_img = add_lefted_text(
                 base_img, 
                 self.author_text, 
                 self.font_medium_path, 
                 self.author_font_size, 
                 (120, 120, 120), 
-                self.author_pos_h, 
+                (self.author_pos_w, self.author_pos_h), 
                 self.side_padding,
             )
         return base_img
