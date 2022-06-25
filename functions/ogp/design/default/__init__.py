@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from functions.ogp.design.common.abstract import AbstractDesign
 from functions.ogp.design.common import paste_icon_image, add_centered_text, add_lefted_text, is_text_size_ok
+from functions.utils import import_module_with_install
 tokenizer = import_module_with_install(f'functions.related.models.default.tokenizer')
 
 class Design(AbstractDesign):
