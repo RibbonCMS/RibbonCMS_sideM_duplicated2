@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 from functions.ogp.design.common.abstract import AbstractDesign
 from functions.ogp.design.common import paste_icon_image, add_centered_text, add_lefted_text, is_text_size_ok
 from functions.utils import import_module_with_install
-tokenizer = import_module_with_install(f'functions.related.models.default.tokenizer')
+tokenize = import_module_with_install(f'functions.related.models.default').tokenize
 
 class Design(AbstractDesign):
     def __init__(self, issue, article, config, consts):
@@ -28,7 +28,7 @@ class Design(AbstractDesign):
         self.text_pos_h = 200
         self.title_font_size = 64
         self.title_margin_h = 50
-        self.title_texts = tokenizer.wakachi(article.title)
+        self.title_texts = tokenize(article.title)
 
         """ author settings """
         self.author_pos_h = 508
