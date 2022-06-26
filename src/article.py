@@ -40,6 +40,10 @@ def build_article(consts, issue):
                 ]
 
     description = issue.get_fm('ogp_description')
+    if description is None or description == '':
+        description = issue.md.replace('\n', ' ')[:200]
+        if len(issue.md) > 200:
+            description += '...'
 
     """ issue frontmatterで投稿日時が指定されている場合それを使う """
     issue.posted_at = issue.get_fm('posted_at')
