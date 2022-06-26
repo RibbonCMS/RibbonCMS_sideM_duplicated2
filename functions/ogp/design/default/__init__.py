@@ -59,9 +59,9 @@ class Design(AbstractDesign):
 
         draw = ImageDraw.Draw(base_img)
         font = ImageFont.truetype(self.font_black_path, self.title_font_size)
-        text = ''
+        text = self.title_texts[0]
         multiline = False
-        for i, title_text in enumerate(self.title_texts):
+        for i, title_text in enumerate(self.title_texts[1:]):
             if is_text_size_ok(draw, font, text+title_text, base_img.size[0], self.side_padding, text_padding=250):
                 text += title_text
             else:

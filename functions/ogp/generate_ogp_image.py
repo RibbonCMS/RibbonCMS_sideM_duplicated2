@@ -40,6 +40,7 @@ def generate_ogp_image(issue, article, config, consts, thumbnail_save_path):
 def format_thumbnail(img):
     img = _crop_img(img)
     img = _resize_img(img)
+    img = img.convert('RGB')
     return img
 
 def _crop_img(img):
