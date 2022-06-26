@@ -1,1 +1,5 @@
+```yaml
+thumbnail_theme: upload
+thumbnail_image_url: https://user-images.githubusercontent.com/42331656/175803613-90bb0ed2-aee5-4f7f-9655-aecd7ba1b0d0.png
+```
 iaaa

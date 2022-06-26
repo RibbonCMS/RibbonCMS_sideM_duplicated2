@@ -12,7 +12,9 @@ from functions.utils import import_module_with_install
 tokenize = import_module_with_install(f'functions.related.models.default').tokenize
 
 class Design(AbstractDesign):
-    def __init__(self, issue, article, config, consts):
+    def __init__(self, issue, article, config, consts, thumbnail_image=None):
+        self.thumbnail_image = thumbnail_image
+
         """ font """
         self.font_black_path = f"{self.COMMON_FONTS_DIR}/NotoSansJP-Black.otf"
         self.font_medium_path = f"{self.COMMON_FONTS_DIR}/NotoSansJP-Medium.otf"
@@ -44,7 +46,10 @@ class Design(AbstractDesign):
         self.author_text = config['author_name']
 
     def create(self):
-        base_img = Image.open(self.ogp_base_img_path).copy()
+        if self.thumbnail_image is None:
+            base_img = Image.open(self.ogp_base_img_path).copy()
+        else:
+            base_img = self.thumbnail_image
 
         if self.ogp_icon_img_path is not None:
             icon_img = Image.open(self.ogp_icon_img_path).copy()
